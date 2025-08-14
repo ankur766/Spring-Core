@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Automatically scan for @Component classes -->
+    
+    <!-- Using setter -->
+     <bean id="address" class="com.SpringCore.Injection.Address">
+	<property name="street" value="501B"></property>
+		<property name="city" value="Patna"></property>
+		<property name="state" value="Bihar"></property>
+		
+	</bean>
+	 <bean id="student" class="com.SpringCore.Injection.Students">
+	<property name="id" value="101"></property>
+		<property name="name" value="Ankur Kumar"></property>
+		<property name="address"  ref="address"></property>
+		
+	</bean>
+	
+	
+<!-- Using constructor -->
+<!-- <bean  id="student" class="com.SpringCore.DI.Students">
+
+	<constructor-arg value="101"></constructor-arg>
+	<constructor-arg value="Ankur Kumar"></constructor-arg>
+</bean>-->
+</beans>
